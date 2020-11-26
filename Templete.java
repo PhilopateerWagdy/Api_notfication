@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Templete {
 
-	private ArrayList<String> item;
-	private ArrayList<Integer> itemID;
+	private ArrayList<String> item= new ArrayList<>();
+	private ArrayList<Integer> itemID=new ArrayList<>();
 	private ArrayList<Integer> price = new ArrayList<Integer>();
 	private NotificationManger notificationManger = new CRUD();
 	private static int ID = 0;
@@ -20,13 +20,6 @@ public class Templete {
 		return this.price;
 	}
 
-	public NotificationManger getNotificationManger() {
-		return this.notificationManger;
-	}
-
-	public void setNotificationManger(NotificationManger notificationManger) {
-		this.notificationManger = notificationManger;
-	}
 
 	/**
 	 * 
@@ -45,11 +38,11 @@ public class Templete {
 	 * @param user
 	 * @param itemID
 	 */
-	public void callCreate(User user, int itemID) 
+	public void callCreate(User user, int itemID,Type type)
 	{
 		String[] data;
 		Content content;
-		
+
 		if(itemID == -1)
 		{
 			data = new String[1];
@@ -66,6 +59,7 @@ public class Templete {
 			content = new bookItem();
 			data[1]= item.get(itemID);
 		}
+		content.setType(type);
 		data[0]= user.getName();
 		user.notificationList.add(notificationManger.create(data,content));
 	}

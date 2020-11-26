@@ -1,5 +1,7 @@
 public class Notification {
 
+
+
 	private int NotificationID;
 	private String massage;
 	private Content content;
@@ -11,6 +13,7 @@ public class Notification {
 	public String getMassage() {
 		return this.massage;
 	}
+	public void setNotificationID(int notificationID) { this.NotificationID =notificationID; }
 
 	public void setMassage(String massage) {
 		this.massage = massage;

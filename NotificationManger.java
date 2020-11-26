@@ -6,7 +6,7 @@ public interface NotificationManger {
 	 * 
 	 * @param data
 	 */
-	Notification create(String[] data, Content content);
+	Notification create(String[] data,Content content);
 
 	/**
 	 * 
