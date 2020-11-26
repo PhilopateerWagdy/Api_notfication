@@ -10,8 +10,33 @@ public class CRUD implements NotificationManger {
 	 */
 	public Notification create(String[] data,Content content) {
 		// TODO - implement CRUD.create
-		
-		throw new UnsupportedOperationException();
+		int dataSize= data.length;
+		if (dataSize<2){
+			throw new UnsupportedOperationException();
+		}
+
+		Notification temp =new Notification();
+		temp.setNotificationID(id++);
+
+
+		String message=content.Massage();
+
+		int count = 0,safetyCount=0;
+
+		for (int i = 0; i < message.length() - 1; i++) {
+			if (message.charAt(i)=='{') {
+				if(safetyCount<dataSize){
+					safetyCount++;
+				}
+				else{
+					throw new UnsupportedOperationException();
+				}
+				message = message.substring(0,i)+data[count++]+message.substring(i+3);
+			}
+		}
+		temp.setMassage(message);
+		temp.setContent(content);
+		return temp;
 	}
 
 	/**
@@ -21,7 +46,24 @@ public class CRUD implements NotificationManger {
 	 */
 	public Notification update(Notification notification, String[] data) {
 		// TODO - implement CRUD.update
-		throw new UnsupportedOperationException();
+		String message=notification.getContent().Massage();
+		int count = 0,safetyCount=0;
+		int dataSize= data.length;
+
+		for (int i = 0; i < message.length() - 1; i++) {
+			if (message.charAt(i)=='{') {
+				if(safetyCount<dataSize){
+					safetyCount++;
+				}
+				else{
+					throw new UnsupportedOperationException();
+				}
+				message = message.substring(0,i)+data[count++]+message.substring(i+3);
+			}
+		}
+		notification.setMassage(message);
+		return notification;
+
 	}
 
 	/**
@@ -30,18 +72,27 @@ public class CRUD implements NotificationManger {
 	 */
 	public String read(Notification notification) {
 		// TODO - implement CRUD.read
-
-		throw new UnsupportedOperationException();
+		return notification.getMassage();
 	}
 
 	/**
 	 * 
-	 * @param notfications
+	 * @param notifications
 	 * @param ID
 	 */
-	public void delete(ArrayList<Notification> notfications, int ID) {
+	public void delete(ArrayList<Notification> notifications, int ID) {
 		// TODO - implement CRUD.delete
-		throw new UnsupportedOperationException();
+		int index=-1;
+		for (int i = 0; i < notifications.size(); i++) {
+			if (notifications.get(i).getNotificationID()==ID){
+				index=i;
+				break;
+			}
+		}
+		if (index==-1)
+			throw new UnsupportedOperationException();
+		else
+			notifications.remove(index);
 	}
 
 }
