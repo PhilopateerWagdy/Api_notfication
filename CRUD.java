@@ -8,7 +8,7 @@ public class CRUD implements NotificationManger {
 	 * 
 	 * @param data
 	 */
-	public Notification create(String[] data) {
+	public Notification create(String[] data,Content content) {
 		// TODO - implement CRUD.create
 		
 		throw new UnsupportedOperationException();
