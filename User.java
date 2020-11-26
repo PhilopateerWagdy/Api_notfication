@@ -7,7 +7,7 @@ public class User {
 	private int userID;
 	private String email;
 	private String password;
-	private ArrayList<Notification> notificationList;
+	public ArrayList<Notification> notificationList;
 	private Templete templete;
 	private NotificationManger manger;
 
@@ -66,15 +66,6 @@ public class User {
 	 */
 	public void bookingItem(int itemId) {
 		// TODO - implement User.bookingItem
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param password
-	 */
-	public void rqstChngPW(String password) {
-		// TODO - implement User.rqstChngPW
 		throw new UnsupportedOperationException();
 	}
 
