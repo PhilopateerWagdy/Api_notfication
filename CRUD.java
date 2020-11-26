@@ -11,9 +11,6 @@ public class CRUD implements NotificationManger {
 	public Notification create(String[] data,Content content) {
 		// TODO - implement CRUD.create
 		int dataSize= data.length;
-		if (dataSize<2){
-			throw new UnsupportedOperationException();
-		}
 
 		Notification temp =new Notification();
 		temp.setNotificationID(id++);
