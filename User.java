@@ -94,4 +94,9 @@ public class User {
 		throw new UnsupportedOperationException();
 	}
 
+	public void showNotificationIDs() {
+		// TODO - implement User.showNotificationIDs
+		throw new UnsupportedOperationException();
+	}
+
 }
