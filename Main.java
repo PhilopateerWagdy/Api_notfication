@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
 	private Templete templete;
@@ -9,7 +11,7 @@ public class Main {
 	 * @param email
 	 * @param password
 	 */
-	public int signIn(string email, string password) {
+	public int signIn(String email, String password) {
 		// TODO - implement Main.signIn
 		throw new UnsupportedOperationException();
 	}
@@ -21,7 +23,7 @@ public class Main {
 	 * @param email
 	 * @param password
 	 */
-	public void signUp(string name, string phoneNumber, string email, string password) {
+	public void signUp(String name, String phoneNumber, String email, String password) {
 		// TODO - implement Main.signUp
 		throw new UnsupportedOperationException();
 	}
@@ -30,7 +32,7 @@ public class Main {
 	 * 
 	 * @param sendingType
 	 */
-	public int forgetPW(string sendingType) {
+	public int forgetPW(String sendingType) {
 		// TODO - implement Main.forgetPW
 		throw new UnsupportedOperationException();
 	}
@@ -39,7 +41,7 @@ public class Main {
 	 * 
 	 * @param args
 	 */
-	public static void main(string[] args) {
+	public static void main(String[] args) {
 		// TODO - implement Main.main
 		throw new UnsupportedOperationException();
 	}

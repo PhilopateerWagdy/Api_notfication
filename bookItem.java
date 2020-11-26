@@ -1,6 +1,6 @@
 public class bookItem extends Content {
 
-	public string Massage() {
+	public String Massage() {
 		// TODO - implement bookItem.Massage
 		throw new UnsupportedOperationException();
 	}

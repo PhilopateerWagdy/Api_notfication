@@ -1,6 +1,6 @@
 public abstract class Content {
 
-	public string Massage() {
+	public String Massage() {
 		// TODO - implement Content.Massage
 		throw new UnsupportedOperationException();
 	}

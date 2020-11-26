@@ -1,7 +1,7 @@
 public enum Type {
 	;
 
-	public string toString() {
+	public String toString() {
 		// TODO - implement Type.toString
 		throw new UnsupportedOperationException();
 	}

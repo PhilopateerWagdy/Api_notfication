@@ -1,27 +1,29 @@
+import java.util.ArrayList;
+
 public class User {
 
-	private string name;
-	private string phoneNumber;
+	private String name;
+	private String phoneNumber;
 	private int userID;
-	private string email;
-	private string password;
+	private String email;
+	private String password;
 	private ArrayList<Notification> notificationList;
 	private Templete templete;
 	private NotificationManger manger;
 
-	public string getName() {
+	public String getName() {
 		return this.name;
 	}
 
-	public void setName(string name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public string getPhoneNumber() {
+	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
 
-	public void setPhoneNumber(string phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -33,19 +35,19 @@ public class User {
 		this.userID = userID;
 	}
 
-	public string getEmail() {
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(string email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public string getPassword() {
+	public String getPassword() {
 		return this.password;
 	}
 
-	public void setPassword(string password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -71,7 +73,7 @@ public class User {
 	 * 
 	 * @param password
 	 */
-	public void rqstChngPW(string password) {
+	public void rqstChngPW(String password) {
 		// TODO - implement User.rqstChngPW
 		throw new UnsupportedOperationException();
 	}

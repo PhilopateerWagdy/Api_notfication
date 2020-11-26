@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class CRUD implements NotificationManger {
 
 	private static int id = 0;
@@ -6,8 +8,9 @@ public class CRUD implements NotificationManger {
 	 * 
 	 * @param data
 	 */
-	public Notification create(string[] data) {
+	public Notification create(String[] data) {
 		// TODO - implement CRUD.create
+		
 		throw new UnsupportedOperationException();
 	}
 
@@ -16,7 +19,7 @@ public class CRUD implements NotificationManger {
 	 * @param notification
 	 * @param data
 	 */
-	public Notification update(Notification notification, string[] data) {
+	public Notification update(Notification notification, String[] data) {
 		// TODO - implement CRUD.update
 		throw new UnsupportedOperationException();
 	}
@@ -25,8 +28,9 @@ public class CRUD implements NotificationManger {
 	 * 
 	 * @param notification
 	 */
-	public string read(Notification notification) {
+	public String read(Notification notification) {
 		// TODO - implement CRUD.read
+
 		throw new UnsupportedOperationException();
 	}
 

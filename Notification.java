@@ -1,18 +1,18 @@
 public class Notification {
 
 	private int NotificationID;
-	private string massage;
+	private String massage;
 	private Content content;
 
 	public int getNotificationID() {
 		return this.NotificationID;
 	}
 
-	public string getMassage() {
+	public String getMassage() {
 		return this.massage;
 	}
 
-	public void setMassage(string massage) {
+	public void setMassage(String massage) {
 		this.massage = massage;
 	}
 

@@ -1,23 +1,25 @@
+import java.util.ArrayList;
+
 public interface NotificationManger {
 
 	/**
 	 * 
 	 * @param data
 	 */
-	Notification create(string[] data);
+	Notification create(String[] data);
 
 	/**
 	 * 
 	 * @param notification
 	 */
-	string read(Notification notification);
+	String read(Notification notification);
 
 	/**
 	 * 
 	 * @param notification
 	 * @param data
 	 */
-	Notification update(Notification notification, string[] data);
+	Notification update(Notification notification, String[] data);
 
 	/**
 	 * 

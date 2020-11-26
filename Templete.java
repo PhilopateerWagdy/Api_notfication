@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class Templete {
 
-	private ArrayList item;
-	private ArrayList itemID;
-	private ArrayList price;
+	private ArrayList<String> item;
+	private ArrayList<Integer> itemID;
+	private ArrayList<Integer> price;
 	private NotificationManger notificationManger;
 	private static int ID = 0;
 
@@ -31,7 +33,7 @@ public class Templete {
 	 * @param itemName
 	 * @param price
 	 */
-	public void addItem(string itemName, int price) {
+	public void addItem(String itemName, int price) {
 		// TODO - implement Templete.addItem
 		throw new UnsupportedOperationException();
 	}
