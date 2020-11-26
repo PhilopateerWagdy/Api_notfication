@@ -2,7 +2,7 @@ public class Main {
 
 	private Templete templete;
 	private ArrayList<User> users;
-	private int userID = 0;
+	private static int userID = 0;
 
 	/**
 	 * 
@@ -32,6 +32,15 @@ public class Main {
 	 */
 	public int forgetPW(string sendingType) {
 		// TODO - implement Main.forgetPW
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(string[] args) {
+		// TODO - implement Main.main
 		throw new UnsupportedOperationException();
 	}
 

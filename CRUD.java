@@ -1,6 +1,6 @@
 public class CRUD implements NotificationManger {
 
-	private int id = 0;
+	private static int id = 0;
 
 	/**
 	 * 

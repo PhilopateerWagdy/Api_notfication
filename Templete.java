@@ -4,7 +4,7 @@ public class Templete {
 	private ArrayList itemID;
 	private ArrayList price;
 	private NotificationManger notificationManger;
-	private int ID = 0;
+	private static int ID = 0;
 
 	public ArrayList getItem() {
 		return this.item;
@@ -32,7 +32,7 @@ public class Templete {
 	 * @param price
 	 */
 	public void addItem(string itemName, int price) {
-		// TODO - implement store.addItem
+		// TODO - implement Templete.addItem
 		throw new UnsupportedOperationException();
 	}
 
@@ -42,7 +42,7 @@ public class Templete {
 	 * @param itemID
 	 */
 	public void callCreate(User user, int itemID) {
-		// TODO - implement store.callCreate
+		// TODO - implement Templete.callCreate
 		throw new UnsupportedOperationException();
 	}
 
@@ -53,7 +53,7 @@ public class Templete {
 	 * @param itemID
 	 */
 	public void callUpdate(User user, int notificationId, int itemID) {
-		// TODO - implement store.callUpdate
+		// TODO - implement Templete.callUpdate
 		throw new UnsupportedOperationException();
 	}
 
