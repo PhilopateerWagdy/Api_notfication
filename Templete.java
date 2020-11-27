@@ -89,8 +89,12 @@ public class Templete {
         
         String[] data = new String[2];
         data[0]=user.getName();
-        data[1]=item.get(itemID);
-        
+        if (itemID<ID)
+        	data[1]=item.get(itemID);
+        else{
+			System.out.println("Wrong Item Id");
+			return;
+		}
         user.notificationList.set(index, notificationManger.update(user.notificationList.get(index),data));
 	}
 
