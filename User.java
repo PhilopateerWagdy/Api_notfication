@@ -2,14 +2,15 @@ import java.util.ArrayList;
 
 public class User {
 
+	private static final User User = null;
 	private String name;
 	private String phoneNumber;
 	private int userID;
 	private String email;
 	private String password;
-	public ArrayList<Notification> notificationList;
+	public ArrayList<Notification> notificationList=new ArrayList<>();
 	private Templete templete;
-	private NotificationManger manger;
+	private NotificationManger manger = new CRUD();
 
 	public String getName() {
 		return this.name;
@@ -56,40 +57,42 @@ public class User {
 	}
 
 	public void showItems() {
-		// TODO - implement User.showItems
-		throw new UnsupportedOperationException();
+
+		for(int i = 0; i < templete.getItem().size(); i++ )
+		{
+			System.out.println(templete.getItemID().get(i)+"\t"+ templete.getItem().get(i)+"\t"+templete.getPrice().get(i));
+		}
+
 	}
 
-	/**
-	 * 
-	 * @param itemId
-	 */
-	public void bookingItem(int itemId) {
-		// TODO - implement User.bookingItem
-		throw new UnsupportedOperationException();
+	public void bookingItem(int itemId,Type type) {
+
+		templete.callCreate(this, itemId,type);
 	}
 
-	/**
-	 * 
-	 * @param NID
-	 */
 	public void callRead(int NID) {
-		// TODO - implement User.callRead
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < notificationList.size(); i++) {
+			if (notificationList.get(i).getNotificationID()==NID) {
+				System.out.println(manger.read(notificationList.get(i)));
+				return;
+			}
+		}
+		System.out.println("Wrong ID");
 	}
 
-	/**
-	 * 
-	 * @param NID
-	 */
 	public void callDelete(int NID) {
-		// TODO - implement User.callDelete
-		throw new UnsupportedOperationException();
+
+		manger.delete(notificationList,NID);
+
 	}
 
 	public void showNotificationIDs() {
-		// TODO - implement User.showNotificationIDs
-		throw new UnsupportedOperationException();
+
+		for(int i = 0; i < notificationList.size(); i++)
+		{
+			System.out.println(notificationList.get(i).getNotificationID()+"\t"+notificationList.get(i).getContent().getType());
+		}
+		System.out.println("\n");
 	}
 
 }
