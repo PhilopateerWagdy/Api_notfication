@@ -57,12 +57,14 @@ public class User {
 	}
 
 	public void showItems() {
-
-		for(int i = 0; i < templete.getItem().size(); i++ )
+		int i = 0;
+		for(; i < templete.getItem().size(); i++ )
 		{
 			System.out.println(templete.getItemID().get(i)+"\t"+ templete.getItem().get(i)+"\t"+templete.getPrice().get(i));
 		}
-
+		if (i==0){
+			System.out.println("There is no Items");
+		}
 	}
 
 	public void bookingItem(int itemId,Type type) {
@@ -87,12 +89,15 @@ public class User {
 	}
 
 	public void showNotificationIDs() {
-
-		for(int i = 0; i < notificationList.size(); i++)
+		int i = 0;
+		for(; i < notificationList.size(); i++)
 		{
 			System.out.println(notificationList.get(i).getNotificationID()+"\t"+notificationList.get(i).getContent().getType());
 		}
 		System.out.println("\n");
+		if (i==0){
+			System.out.println("There is no Notifications");
+		}
 	}
 
 }
