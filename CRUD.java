@@ -87,7 +87,7 @@ public class CRUD implements NotificationManger {
 			}
 		}
 		if (index==-1)
-			throw new UnsupportedOperationException();
+			System.out.println("Wrong Notification ID");
 		else
 			notifications.remove(index);
 	}
