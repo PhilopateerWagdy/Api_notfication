@@ -13,27 +13,11 @@ public class HttpURLConnectionExample {
 
     private final String USER_AGENT = "Mozilla/5.0";
 
-    public static void main(String[] args) throws Exception {
-
-        HttpURLConnectionExample http = new HttpURLConnectionExample();
-
-        // Sending get request
-         http.sendingGetRequest();
-
-        // Sending post request
-        Notification notification;
-        notification =new Notification(0,"confirmation","hazem", LanguageEnum.English, Type.mail,"hazem");
-        http.sendingPostRequest(notification);
-
-
-
-
-    }
 
     // HTTP GET request
     public void sendingGetRequest() throws Exception {
 
-        String urlString = "http://localhost:8080/api/Notification";
+        String urlString = "http://localhost:8080/api/Notification/";
 
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -101,20 +85,21 @@ public class HttpURLConnectionExample {
     // HTTP Post request
     public void sendingPostRequest(Notification notification) throws Exception {
 
-        String url = "http://localhost:8080/api/Notification";
+        String url = "http://localhost:8080/api/Notification/";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
         // Setting basic post request
         con.setRequestMethod("POST");
-        con.setRequestProperty("content", "\""+notification.getContent()+"\"");
         con.setRequestProperty("subject", "\""+notification.getSubject()+"\"");
+        con.setRequestProperty("content", "\""+notification.getContent()+"\"");
         con.setRequestProperty("language", "\""+notification.getLanguage().toString()+"\"");
         con.setRequestProperty("type", "\""+notification.getType().toString()+"\"");
         con.setRequestProperty("user", "\""+notification.getUser()+"\"");
         con.setRequestProperty("Content-Type","application/json");
 
-        String postJsonData = "{\"content\":\""+notification.getContent()+"\",\"subject\":\""+notification.getSubject()+"\"," +
+        String postJsonData = "{\"subject\":\""+notification.getSubject()+"\"," +
+                "\"content\":\""+notification.getContent()+"\","+
                 "\"language\":\""+notification.getLanguage().toString()+"\"," +
                 " \"type\":\""+notification.getType().toString()+"\"" +
                 ",\"user\":\""+notification.getUser()+"\"}";
@@ -131,15 +116,17 @@ public class HttpURLConnectionExample {
         System.out.println("Post Data : " + postJsonData);
         System.out.println("Response Code : " + responseCode);
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String output;
-        StringBuffer response = new StringBuffer();
+        StringBuffer response;
+        try (BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()))) {
+            String output;
+            response = new StringBuffer();
 
-        while ((output = in.readLine()) != null) {
-            response.append(output);
+            while ((output = in.readLine()) != null) {
+                response.append(output);
+            }
+            in.close();
         }
-        in.close();
 
         //printing result from response
         System.out.println(response.toString());
