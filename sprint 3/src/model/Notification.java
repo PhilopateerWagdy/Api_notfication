@@ -14,7 +14,6 @@ public class Notification {
 
     private final String user;
 
-    private final boolean status;
 
 
 
@@ -23,15 +22,13 @@ public class Notification {
                          String content,
                          LanguageEnum language,
                         Type type,
-                         String user,
-                        boolean status) {
+                         String user) {
         this.id = id;
         this.content = content;
         this.subject = subject;
         this.language = language;
         this.type=type;
         this.user = user;
-        this.status=status;
     }
 
 
@@ -58,9 +55,5 @@ public class Notification {
 
     public String getUser() {
         return user;
-    }
-
-    public boolean isStatus() {
-        return status;
     }
 }

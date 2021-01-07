@@ -22,7 +22,7 @@ public class HttpURLConnectionExample {
 
         // Sending post request
         Notification notification;
-        notification =new Notification(0,"confirmation","hazem", LanguageEnum.English, Type.mail,"hazem",true);
+        notification =new Notification(0,"confirmation","hazem", LanguageEnum.English, Type.mail,"hazem");
         http.sendingPostRequest(notification);
 
 
@@ -31,9 +31,9 @@ public class HttpURLConnectionExample {
     }
 
     // HTTP GET request
-    private void sendingGetRequest() throws Exception {
+    public void sendingGetRequest() throws Exception {
 
-        String urlString = "http://localhost:8080/api/Notification/get/";
+        String urlString = "http://localhost:8080/api/Notification";
 
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -63,10 +63,11 @@ public class HttpURLConnectionExample {
         System.out.println(response.toString());
 
     }
-    // HTTP GET request
-    private void sendingGetRequest(String user) throws Exception {
 
-        String urlString = "http://localhost:8080/api/Notification/get/"+user;
+    // HTTP GET request
+    public void sendingGetRequest(String user) throws Exception {
+
+        String urlString = "http://localhost:8080/api/Notification/"+user;
 
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -98,7 +99,7 @@ public class HttpURLConnectionExample {
     }
 
     // HTTP Post request
-    private void sendingPostRequest(Notification notification) throws Exception {
+    public void sendingPostRequest(Notification notification) throws Exception {
 
         String url = "http://localhost:8080/api/Notification";
         URL obj = new URL(url);
