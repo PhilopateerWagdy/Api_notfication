@@ -1,18 +1,19 @@
 package com.example.notificationapi.controller;
 
 import com.example.notificationapi.model.Notification;
+import com.example.notificationapi.model.Type;
+import com.example.notificationapi.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.example.notificationapi.service.NotificationService;
 
-import java.sql.SQLException;
 import java.util.List;
-
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("api/Notification")
+@RequestMapping("api/Notification/")
 public class NotificationController {
     private final NotificationService notificationService;
 
@@ -22,30 +23,17 @@ public class NotificationController {
     }
 
     @PostMapping
-    public void AddNotification(@Validated @NonNull @RequestBody Notification notification) throws SQLException {
-        notificationService.AddNotification(notification);
+    public boolean SendNotification(@Validated @NonNull @RequestBody Notification notification){
+        return notificationService.SendNotification(notification);
     }
 
+    @GetMapping(path ="{user}")
+    public List<Notification> GetNotificationOfUser(@PathVariable("user") String user){
+
+        return notificationService.GetNotificationOfUser(user);
+    }
     @GetMapping
-    public List<Notification> GetNotification() throws SQLException {
-        return notificationService.GetNotification();
+    public List<Notification> GetNotificationOfUsers(){
+        return notificationService.GetNotificationsOfUsers();
     }
-
-    @GetMapping(path ="{id}")
-    public Notification GetNotificationByID(@PathVariable("id") int id){
-        return notificationService.GetNotificationByID(id).orElse(null);
-    }
-
-    @DeleteMapping(path = "{id}")
-    public void DeleteNotification(@PathVariable("id") int id){
-        notificationService.DeleteNotification(id);
-    }
-
-    @PutMapping(path = "{id}")
-    public void UpdateNotification(@PathVariable("id") int id ,@Validated @NonNull @RequestBody Notification notification){
-        notificationService.UpdateNotification(id, notification);
-    }
-
-
-
 }

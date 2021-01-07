@@ -9,7 +9,7 @@ public class Notification {
 
     private final String subject;
     @NonNull
-    private final String content;
+    private  String content;
     @NonNull
     private final LanguageEnum language;
     @NonNull
@@ -17,7 +17,6 @@ public class Notification {
     @NonNull
     private final String user;
 
-    private final boolean status;
 
 
 
@@ -26,18 +25,18 @@ public class Notification {
                         @JsonProperty("content") String content,
                         @JsonProperty("language") LanguageEnum language,
                         @JsonProperty("type") Type type,
-                        @JsonProperty("user") String user,
-                        boolean status) {
+                        @JsonProperty("user") String user) {
         this.id = id;
         this.content = content;
         this.subject = subject;
         this.language = language;
         this.type=type;
         this.user = user;
-        this.status=status;
     }
 
-
+    public  void setContent(String content){
+        this.content=content;
+    }
     public int getId() {
         return id;
     }
@@ -65,7 +64,4 @@ public class Notification {
         return user;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
 }

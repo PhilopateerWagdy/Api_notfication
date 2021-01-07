@@ -4,6 +4,7 @@ package com.example.notificationapi.service;
 
 import com.example.notificationapi.dal.INotificationDataAccessLayer;
 import com.example.notificationapi.model.Notification;
+import com.example.notificationapi.model.Type;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -41,8 +42,16 @@ public class NotificationService {
         return notificationDAL.UpdateNotification(id, notification);
     }
 
-    public int SendNotification(int id){
-        return notificationDAL.sendNotification(id);
+    public boolean SendNotification(Notification notification){
+        return notificationDAL.sendNotification(notification);
+    }
+    public List<Notification> GetNotificationOfUser(String user){
+        List<Notification>notifications =notificationDAL.GetNotificationOfUser(user);
+        notificationDAL.DeleteNotificationsOfUser(user);
+        return notifications;
+    }
+    public List<Notification> GetNotificationsOfUsers(){
+        return notificationDAL.GetNotificationsOfUsers();
     }
 
 

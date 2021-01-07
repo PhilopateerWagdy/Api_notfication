@@ -1,6 +1,7 @@
 package com.example.notificationapi.dal;
 
 import com.example.notificationapi.model.Notification;
+import com.example.notificationapi.model.Type;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class MemoryNotificationDataAccessLayer implements INotificationDataAcces
                 notification.getSubject(),
                 notification.getContent(),
                 notification.getLanguage(),
-                notification.getType(),notification.getUser(), false));
+                notification.getType(),notification.getUser()));
         return 1;
     }
 
@@ -38,7 +39,7 @@ public class MemoryNotificationDataAccessLayer implements INotificationDataAcces
                     if (indexOfNotification>=0){
                         notifications.set(id, new Notification( id,notification.getSubject(),
                                 notification.getContent(),notification.getLanguage(),
-                                notification.getType(),notification.getUser(), false));
+                                notification.getType(),notification.getUser()));
                         return 1;
                     }
                     else
@@ -59,7 +60,24 @@ public class MemoryNotificationDataAccessLayer implements INotificationDataAcces
     }
 
     @Override
-    public int sendNotification(int id) {
-        return 0;
+    public boolean sendNotification(Notification notification) {
+        return false;
     }
+
+    @Override
+    public List<Notification> GetNotificationOfUser(String user) {
+        return null;
+    }
+
+    @Override
+    public List<Notification> GetNotificationsOfUsers() {
+        return null;
+    }
+
+    @Override
+    public void DeleteNotificationsOfUser(String user) {
+
+    }
+
+
 }
