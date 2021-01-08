@@ -1,4 +1,4 @@
-import HttpConnection.HttpURLConnectionExample;
+import HttpConnection.HttpURLConnectionApi;
 import HttpConnection.INotificationGateway;
 import model.LanguageEnum;
 import model.Notification;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-        INotificationGateway http = new HttpURLConnectionExample() ;
+        INotificationGateway http = new HttpURLConnectionApi() ;
         Scanner input = new Scanner(System.in);
         char choice_1;
 

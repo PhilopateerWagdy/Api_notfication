@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpURLConnectionExample implements INotificationGateway{
+public class HttpURLConnectionApi implements INotificationGateway{
 
     private final String USER_AGENT = "Mozilla/5.0";
 
@@ -21,7 +21,7 @@ public class HttpURLConnectionExample implements INotificationGateway{
         String urlString = "http://localhost:8080/api/Notification/";
 
         URL url = new URL(urlString);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        java.net.HttpURLConnection con = (java.net.HttpURLConnection) url.openConnection();
 
         // By default it is GET request
         con.setRequestMethod("GET");
@@ -55,7 +55,7 @@ public class HttpURLConnectionExample implements INotificationGateway{
         String urlString = "http://localhost:8080/api/Notification/"+user;
 
         URL url = new URL(urlString);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        java.net.HttpURLConnection con = (java.net.HttpURLConnection) url.openConnection();
 
         // By default it is GET request
         con.setRequestMethod("GET");
@@ -88,7 +88,7 @@ public class HttpURLConnectionExample implements INotificationGateway{
 
         String url = "http://localhost:8080/api/Notification/";
         URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        java.net.HttpURLConnection con = (java.net.HttpURLConnection) obj.openConnection();
 
         // Setting basic post request
         con.setRequestMethod("POST");
