@@ -1,3 +1,4 @@
+package HttpConnection;
 
 import model.LanguageEnum;
 import model.Notification;
@@ -9,7 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpURLConnectionExample {
+public class HttpURLConnectionExample implements INotificationGateway{
 
     private final String USER_AGENT = "Mozilla/5.0";
 
